@@ -6,8 +6,6 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 import dao.MajorDao;
-import entity.Dept;
-import entity.Emp;
 import entity.Major;
 import entity.Manager;
 import util.HibernateUtil;
@@ -51,9 +49,6 @@ public class MajorDaoImpl implements MajorDao{
 		m.setName(major.getName());
 		m.setCollege(major.getCollege());				
 		s.update(m);
-		s.getTransaction().commit();
-		
+		s.getTransaction().commit();		
 	}
-	
-
 }

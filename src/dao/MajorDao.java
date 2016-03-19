@@ -2,7 +2,6 @@ package dao;
 
 import java.util.List;
 
-import entity.Dept;
 import entity.Major;
 
 public interface MajorDao {
@@ -11,6 +10,4 @@ public interface MajorDao {
 	void delete(int id) throws Exception;
 	Major query(int id) throws Exception;
 	void update(Major major,int id) throws Exception;
-
-
 }

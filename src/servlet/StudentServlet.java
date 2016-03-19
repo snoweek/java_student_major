@@ -16,25 +16,14 @@ import daoimpl.StudentDaoImpl;
 import entity.Major;
 import entity.Student;
 import util.HibernateUtil;
-
-/**
- * Servlet implementation class StudentServlet
- */
 public class StudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	StudentDao studentDao=new StudentDaoImpl();
 	MajorDao majorDao=new MajorDaoImpl();  
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public StudentServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
-
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
@@ -126,8 +115,7 @@ public class StudentServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-		}else if(act.equals("condition_query_student")){
-			
+		}else if(act.equals("condition_query_student")){			
 			try {
 				String name=request.getParameter("name");
 				int gender=Integer.parseInt(request.getParameter("gender"));
@@ -138,9 +126,7 @@ public class StudentServlet extends HttpServlet {
 			} catch (Exception e) {
 				HibernateUtil.closeSessionFactory();
 				e.printStackTrace();
-			}
-			
+			}			
 		}
 	}
-
 }

@@ -44,10 +44,7 @@ public class ManagerServlet extends HttpServlet {
 				}else{
 					result="name exit";
 				}
-				out.print(result);
-								
-				
-				
+				out.print(result);										
 			} catch (Exception e) {
 				HibernateUtil.closeSessionFactory();
 				e.printStackTrace();
@@ -75,5 +72,4 @@ public class ManagerServlet extends HttpServlet {
 			}							
 		}
 	}
-
 }

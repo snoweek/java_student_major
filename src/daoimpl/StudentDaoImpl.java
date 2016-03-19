@@ -12,8 +12,7 @@ import entity.Student;
 
 import util.HibernateUtil;
 
-public class StudentDaoImpl implements StudentDao {
-	
+public class StudentDaoImpl implements StudentDao {	
 	public void add(Student student) throws Exception {
 		Session s = HibernateUtil.getSessionFactory().getCurrentSession();
 		s.beginTransaction();
@@ -34,8 +33,7 @@ public class StudentDaoImpl implements StudentDao {
 		Student student = new Student();
 		student.setId(id);		
 		s.delete(student);
-		s.getTransaction().commit();	
-		
+		s.getTransaction().commit();			
 	}
 	public Student query(int id) throws Exception {
 		Session s = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -59,7 +57,6 @@ public class StudentDaoImpl implements StudentDao {
 	public List<Student> query(String name, int gender,int major_id) throws Exception {
 		Session s = HibernateUtil.getSessionFactory().getCurrentSession();
 		s.beginTransaction();
-		//Query query = s.createQuery("select s from Student s left join fetch s.major where (name is null or s.name=name) and (gender=2 or s.gender=gender) and (major_id=0 or s.major.id=major_id)");	
 		String sql="select s from Student s where  1=1";
 		if(name!=null&name!=""){
 			sql=sql+" and s.name like"+"'%"+name+"%'";
@@ -81,6 +78,4 @@ public class StudentDaoImpl implements StudentDao {
 		s.getTransaction().commit();				
 		return studentList;	
 	}
-	
-
 }

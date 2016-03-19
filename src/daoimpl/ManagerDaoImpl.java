@@ -16,12 +16,12 @@ public class ManagerDaoImpl implements ManagerDao{
 	public Manager login(Manager manager) throws Exception {
 		Session s = HibernateUtil.getSessionFactory().getCurrentSession();
 		s.beginTransaction();
-			Query query = s.createQuery("select m from Manager m where m.name=? and m.password=?");
-			query.setParameter(0, manager.getName());
-			query.setParameter(1, manager.getPassword());
-			Manager m= (Manager) query.uniqueResult();		
-			s.getTransaction().commit();			
-			return m;			
+		Query query = s.createQuery("select m from Manager m where m.name=? and m.password=?");
+		query.setParameter(0, manager.getName());
+		query.setParameter(1, manager.getPassword());
+		Manager m= (Manager) query.uniqueResult();		
+		s.getTransaction().commit();			
+		return m;			
 	}
 	public Manager login(String name) throws Exception {
 		Session s = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -38,9 +38,6 @@ public class ManagerDaoImpl implements ManagerDao{
 		Manager manager= (Manager) s.get(Manager.class, id);
 		manager.setPassword(password);			
 		s.update(manager);
-		s.getTransaction().commit();
-		
-		
+		s.getTransaction().commit();		
 	}
-
 }

@@ -11,7 +11,6 @@ import javax.servlet.http.HttpSession;
 
 import dao.ManagerDao;
 import daoimpl.ManagerDaoImpl;
-import entity.Dept;
 import entity.Manager;
 import util.HibernateUtil;
 public class LoginManagerServlet extends HttpServlet {
@@ -54,5 +53,4 @@ public class LoginManagerServlet extends HttpServlet {
 			}
 		}						
 	}
-
 }

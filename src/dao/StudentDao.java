@@ -12,6 +12,4 @@ public interface StudentDao {
 	void update(Student Student,int id) throws Exception;
 	void add(Student student) throws Exception;
 	List<Student> query(String name,int gender,int major_id) throws Exception;
-	
-
 }

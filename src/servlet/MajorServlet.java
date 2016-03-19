@@ -28,10 +28,7 @@ public class MajorServlet extends HttpServlet {
 			try {
 				List<Major> majorList=majorDao.query();
 				request.setAttribute("majorList", majorList);	
-				request.getRequestDispatcher("/admin/major_query.jsp").forward(request, response);
-
-				//response.sendRedirect(request.getContextPath()+"/major_query.jsp");
-				
+				request.getRequestDispatcher("/admin/major_query.jsp").forward(request, response);				
 			} catch (Exception e) {
 				HibernateUtil.closeSessionFactory();
 				e.printStackTrace();
@@ -53,7 +50,6 @@ public class MajorServlet extends HttpServlet {
 			int id=Integer.parseInt(request.getParameter("id"));
 			try {
 				majorDao.delete(id);
-				//out.print("success");
 				response.sendRedirect(request.getContextPath()+"/admin/major?act=query");
 			} catch (Exception e) {
 				HibernateUtil.closeSessionFactory();
