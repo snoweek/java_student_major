@@ -26,7 +26,7 @@ public class ManagerFilter implements Filter {
         HttpSession session = req.getSession(true);      
         Manager manager = (Manager) session.getAttribute("manager");
         if (manager== null) {	            
-        	res.sendRedirect("/Design/login.jsp");       
+        	res.sendRedirect("/Student_Major/login.jsp");       
         	} else { 
         		chain.doFilter(request, response);
         	}
