@@ -20,7 +20,7 @@ CREATE TABLE `manager` (
 
 * student
 ```
-| student | CREATE TABLE `student` (
+CREATE TABLE `student` (
   `student_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` text,
   `gender` int(11) DEFAULT NULL,
