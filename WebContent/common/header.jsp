@@ -21,7 +21,7 @@
 					<li><a href="<%=request.getContextPath() %>/login.jsp">管理员登录</a></li>		
 					<%
 						} else {
-							Manager manager=(Manager)session.getAttribute("manager");
+							//Manager manager=(Manager)session.getAttribute("manager");
 					%>
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown">
@@ -45,7 +45,7 @@
 					<li><a href="<%=request.getContextPath() %>/admin/manager?act=logout">注销</a></li>				
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown">
-							<%=manager.getName() %><span class="glyphicon glyphicon-user" ><span class="caret"></span></span>
+							<span class="glyphicon glyphicon-user" ><span class="caret"></span></span>
 						</a>
 						<ul class="dropdown-menu" role="menu">
 							<li role="presentation"><a tabindex="-1" role="menuitem" href="<%=request.getContextPath() %>/admin/manager?act=logout">注销</a></li>
